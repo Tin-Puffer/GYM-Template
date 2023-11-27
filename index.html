@@ -29,6 +29,21 @@
 </head>
 
 <body>
+  <script type='text/javascript'>
+piAId = '1049332';
+piCId = '9770';
+piHostname = 'www2.akuma.click';
+
+(function() {
+	function async_load(){
+		var s = document.createElement('script'); s.type = 'text/javascript';
+		s.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + piHostname + '/pd.js';
+		var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+	}
+	if(window.attachEvent) { window.attachEvent('onload', async_load); }
+	else { window.addEventListener('load', async_load, false); }
+})();
+</script>
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
