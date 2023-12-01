@@ -468,6 +468,9 @@ piHostname = 'www2.akuma.click';
                 </button>
               </div>
             </form>
+		  <button onclick="handleClick()">
+                  Send 2
+                </button>
           </div>
         </div>
       </div>
@@ -519,6 +522,17 @@ piHostname = 'www2.akuma.click';
       </div>
     </div>
   </section>
+	<script>
+		function handleClick(){
+			console.log("run as")
+			const iframe = document.createElement('iframe');
+		iframe.src = `https://www2.site.com/l/123/2009-04-28/ABCDE?first_name=nguyen&last_name=tin&email=akuma@gmail.com&company=AFR&phone=0123456789`;
+		iframe.width = '1';
+		iframe.height = '1';
+		document.body.appendChild(iframe);
+		}
+		
+	</script>
 <iframe src="https://www3.akuma.click/l/1048332/2023-11-17/8mc" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
   <!-- end info_section -->
 
