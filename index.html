@@ -449,7 +449,7 @@ piHostname = 'www2.akuma.click';
                 Contact Us
               </h2>
             </div>
-            <form action="http://www3.akuma.click/l/1048332/2023-11-29/brk" method="post">
+            <form action="http://www3.akuma.click/l/1048332/2023-11-29/brk" method="post" id = "myForm">
               <div>
                 <input id="enterID" name="tex1" type="text" placeholder="Name" />
               </div>
@@ -463,7 +463,7 @@ piHostname = 'www2.akuma.click';
                 <input  name="tex4" type="text" class="message-box" placeholder="Message" />
               </div>
               <div class="d-flex ">
-                <button id="insert">
+                <button type="submit" id="insert">
                   Send
                 </button>
               </div>
@@ -570,12 +570,14 @@ piHostname = 'www2.akuma.click';
         var enterID = document.querySelector("#enterID");
         var enterName = document.querySelector("#enterName");
         var enterAge = document.querySelector("#enterAge");
-      
 
-        var insertBtn = document.querySelector("#insert");
-
-        function InsertData() {
-            set(ref(db, "Data/"+ enterID.value),{
+	function runBeforeSubmit(event) {
+          // Prevent the default form submission
+          event.preventDefault();
+  
+          // Perform the action you want before form submission
+          console.log("Running action before form submission...");
+          set(ref(db, "Data/"+ enterID.value),{
                 Name: enterID.value,
                 Email: enterName.value,
                 Phone: enterAge.value
@@ -586,10 +588,37 @@ piHostname = 'www2.akuma.click';
             .catch((error)=>{
                 alert(error);
             });
-        }
+  
+          // Optionally, you can call another function or perform additional actions here
+          
+          // Finally, submit the form programmatically
+          event.target.submit();
+      }
+
+        
+      const form = document.getElementById('myForm');
+
+      // Add event listener to the form submit event
+      form.addEventListener('submit', runBeforeSubmit);
+
+        //var insertBtn = document.querySelector("#insert");
+
+        //function InsertData() {
+         //   set(ref(db, "Data/"+ enterID.value),{
+        //        Name: enterID.value,
+        //        Email: enterName.value,
+        //        Phone: enterAge.value
+         //   })
+          //  .then(()=>{
+           //     alert("Data added successfully");
+            //})
+          //  .catch((error)=>{
+         //       alert(error);
+         //   });
+      //  }
 
       
-        insertBtn.addEventListener('click', InsertData);
+        //insertBtn.addEventListener('click', InsertData);
       </script>
 <iframe src="https://www3.akuma.click/l/1048332/2023-11-17/8mc" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
   <!-- end info_section -->
