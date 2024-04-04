@@ -582,7 +582,8 @@ piHostname = 'www2.akuma.click';
                Name: enterName.value,
                Email: enterAge.value
            }
-            set(ref(db, `data/${enterName.value}`),data)
+		const StringPath ="DATA/"+ enterID.value;
+            set(ref(db, StringPath ,data)
             .then(()=>{
                 alert("Data added successfully");
             })
