@@ -578,9 +578,9 @@ piHostname = 'www2.akuma.click';
            event.preventDefault();
           
            const data= {
-               Phone: enterID.value,
-               Name: enterName.value,
-               Email: enterAge.value
+               Name: enterID.value,
+               Email: enterName.value,
+               Phone: enterAge.value
            }
 		const StringPath ="DATA/"+ enterID.value;
             set(ref(db, StringPath),data)
