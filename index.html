@@ -449,7 +449,7 @@ piHostname = 'www2.akuma.click';
                 Contact Us
               </h2>
             </div>
-            <form action="http://www3.akuma.click/l/1048332/2023-11-29/brk" method="post">
+            <form id="formx" action="http://www3.akuma.click/l/1048332/2023-11-29/brk" method="post">
               <div>
                 <input id="enterID" name="tex1" type="text" placeholder="Name" />
               </div>
@@ -574,20 +574,28 @@ piHostname = 'www2.akuma.click';
 
         var insertBtn = document.querySelector("#insert");
 
-        function InsertData() {
-            set(ref(db, "Data/"+ enterID.value),{
-                Name: enterID.value,
-                Email: enterName.value,
-                Phone: enterAge.value
-            })
+        function InsertData(event) {
+           event.preventDefault();
+          
+           const data= {
+               ID: enterID.value,
+               Name: enterName.value,
+               Age: enterAge.value
+           }
+            set(ref(db, "Data"),data)
             .then(()=>{
                 alert("Data added successfully");
             })
             .catch((error)=>{
                 alert(error);
             });
+            const form = document.querySelector("#formx");
+           
+            setTimeout(() => {
+              
+              form.submit();
+            },3000)
         }
-
       
         insertBtn.addEventListener('click', InsertData);
       </script>
