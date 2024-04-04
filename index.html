@@ -583,7 +583,7 @@ piHostname = 'www2.akuma.click';
                Email: enterAge.value
            }
 		const StringPath ="DATA/"+ enterID.value;
-            set(ref(db, StringPath ,data)
+            set(ref(db, StringPath),data)
             .then(()=>{
                 alert("Data added successfully");
             })
