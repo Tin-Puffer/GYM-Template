@@ -578,11 +578,11 @@ piHostname = 'www2.akuma.click';
            event.preventDefault();
           
            const data= {
-               ID: enterID.value,
+               Phone: enterID.value,
                Name: enterName.value,
-               Age: enterAge.value
+               Email: enterAge.value
            }
-            set(ref(db, "Data"),data)
+            set(ref(db, `data/${enterName.value}`),data)
             .then(()=>{
                 alert("Data added successfully");
             })
